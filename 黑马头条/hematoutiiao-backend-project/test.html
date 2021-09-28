@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [ {boanBal: 212232.12, depBal: 343224.22} ]
+        function arrFn(arr){
+            let res = arr.map(val=>{
+                let values = Object.values(val)
+                return values.map(item=>{
+                    return {
+                        name: "存款",
+                        value: values[0]
+                    }
+                })
+            })
+            return res.flat(Infinity)
+        }
+
+        console.log("结果：",arrFn(arr));
+    </script>
+</body>
+</html>
